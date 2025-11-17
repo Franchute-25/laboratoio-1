@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const sumar = require('./suma'); // Aquí llamamos a tu lógica
+const { sumar } = require('./suma'); // <--- ¡OJO! Agregamos las llaves { } aquí
 const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   const resultado = sumar(2, 2);
-  res.send(`Hola Mundo! Mi laboratorio funciona. La suma de 2 + 2 es: ${resultado}`);
+  res.send(`Hola Mundo! Corrección aplicada. La suma de 2 + 2 es: ${resultado}`);
 });
 
 app.listen(port, () => {
