@@ -3,7 +3,12 @@ function sumar(a, b) {
 }
 
 function restar(a, b) {
-  return a - b; // <--- ¡Aquí estaba el error! Ya lo corregimos.
+  return a - b;
 }
 
-module.exports = { sumar, restar };
+// ¡NUEVA FUNCIONALIDAD!
+function multiplicar(a, b) {
+  return a * b;
+}
+
+module.exports = { sumar, restar, multiplicar };
