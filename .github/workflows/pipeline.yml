@@ -1,0 +1,27 @@
+name: Pipeline de Pruebas
+
+# 1. ¿Cuándo se activa? (Al hacer push)
+on: [push]
+
+# 2. ¿Qué va a hacer?
+jobs:
+  prueba-automatica:
+    runs-on: ubuntu-latest
+    steps:
+      # Descargar tu código
+      - name: Bajar código
+        uses: actions/checkout@v3
+
+      # Instalar Node.js
+      - name: Instalar Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # Instalar librerías
+      - name: Instalar dependencias
+        run: npm install
+
+      # CORRER LA PRUEBA (Lo importante)
+      - name: Ejecutar Test
+        run: npm test
